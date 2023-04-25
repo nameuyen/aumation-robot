@@ -23,8 +23,7 @@ Robot Framework Language Server
 ****RUN TEST*****
 1. Navigate to folder project by commandline
 2. Run test
-Run 1 test case:  robot  -i [Tag-name]   path to test case file(Example: robot  -i    TestCases\UI\nxg-auth-UI.robot)
-Run test suite: robot   path to test case file(Example: robot  TestCases\UI\nxg-auth-UI.robot)
+
 
 
 
