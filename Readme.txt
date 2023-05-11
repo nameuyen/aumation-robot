@@ -23,6 +23,6 @@ Robot Framework Language Server
 ****RUN TEST*****
 1. Navigate to folder project by commandline
 2. Run test
-
+robot  -i [Tags]  --listening CustomLibrary\CustomListener.py  --variable url_login:dev_url  --outputdir Report\auth   TestCases\ABC\Authentication\auth-authentication.robot
 
 

@@ -3,7 +3,7 @@ Documentation       Test Case Login
 Library             ../../CustomLibrary/CustomLibrary.py
 Resource            ../../../PageObjects/LoginPage/LoginKW.robot
 Resource            ../../../PageObjects/Common/common.robot
-Variables           ../../../Data/RKD-605-nxg-auth/UI/nxg-auth.yaml
+Variables           ../../../Data/auth/UI/auth.yaml
 Test Setup          common.Open My Browser
 Test Teardown       common.Close My Browser
 
@@ -35,4 +35,3 @@ RKD-7470-Verify that can show Password when click on icon "password reveal"
     Enter Password    ${7470.password}
     Click On Password Reveal Button    
     Verify Password Is Revealed     
-

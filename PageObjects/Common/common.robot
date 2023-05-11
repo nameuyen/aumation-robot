@@ -8,16 +8,22 @@ Library     OperatingSystem
 
 
 *** Variables ***
-${url_login}          
+${main_url}                      https://example.com/dev
+${dev_url}                       https://example.com        
 
 *** Keywords ***
 Open Chrome Browser And Go To Login Page
+    Open Chrome Browser And Go To Login Page
+    ${url_login}=  Get Variable Value    ${url_login}
     ${options}=    Evaluate
     ...     sys.modules['selenium.webdriver'].ChromeOptions()
     ...     sys, selenium.webdriver
     Call Method   ${options}        add_argument  --ignore-certificate-errors
     Call Method   ${options}        add_argument  --headless
-    Open Browser  url=${url_login}      browser=chrome       options=${options}
+    ${target_url}=    Run Keyword If    '${url_login}'=='dev_url'    Set Variable    ${dev_url}
+    ...   ELSE IF    '${url_login}'=='main_url'    Set Variable    ${main_url}
+    Set Global Variable    ${target_url}    ${target_url}
+    Open Browser    ${target_url}     browser=chrome       options=${options}
     Set Window Size    1920    1080
 
 Close My Browser
